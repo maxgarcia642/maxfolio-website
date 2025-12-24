@@ -1,6 +1,13 @@
-import Navbar from '@/components/Navbar';
-import Utilities from '@/components/Utilities';
+'use client'; // Whiteline: Added this to ensure interactive components load correctly
+
+import Navbar from '../components/Navbar';
+import Utilities from '../components/Utilities';
 import { ArrowDown, Terminal, Gamepad2 } from 'lucide-react';
+
+/* WHITELINE: This is the main assembly point for your portfolio.
+   It brings together the Hero section, your Code repos, and the 
+   Utility dashboard into one smooth scrolling experience.
+*/
 
 export default function Home() {
   return (
@@ -21,7 +28,6 @@ export default function Home() {
              Computer Science • Creative Developer
            </p>
            <div className="flex gap-4 justify-center">
-             {/* Main Call to Action Button */}
              <a href="/assets/resume.pdf" className="px-8 py-3 bg-gradient-to-b from-aero-sky to-aero-ocean text-white rounded-full font-bold shadow-lg hover:scale-105 transition-transform">
                Download Resume
              </a>
@@ -34,14 +40,13 @@ export default function Home() {
         <ArrowDown className="absolute bottom-10 animate-bounce text-aero-ocean opacity-50" size={32} />
       </section>
 
-      {/* --- PROGRAMMING SECTION (Simplified for Reliability) --- */}
+      {/* --- PROGRAMMING SECTION --- */}
       <section id="programming" className="py-20 px-4 max-w-6xl mx-auto">
         <div className="aero-card p-8 bg-gradient-to-br from-blue-50 to-white">
           <h2 className="text-3xl font-extrabold text-aero-ocean mb-6 flex items-center gap-3">
             <Terminal /> Programming Repositories
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Project Cards */}
             <div className="bg-gray-900 rounded-xl p-4 text-white shadow-xl hover:scale-105 transition-transform">
               <h3 className="font-bold text-green-400 mb-2">Python Projects</h3>
               <p className="text-sm text-gray-400 mb-4">High School CS Work & Scripts</p>
@@ -56,7 +61,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- UTILITIES DASHBOARD (Imported Component) --- */}
       <Utilities />
 
       {/* --- GAME SECTION --- */}
@@ -66,7 +70,7 @@ export default function Home() {
               <Gamepad2 /> Pixel Studio
             </h2>
             <p className="text-slate-600 mb-8">
-              A dedicated space for pixel art and retro gaming. (Interactive module loading...)
+              A dedicated space for pixel art and retro gaming.
             </p>
             <div className="w-full h-64 bg-gray-100 rounded-xl border-4 border-dashed border-gray-300 flex items-center justify-center">
                <span className="text-slate-400 font-mono">Game Canvas Initializing</span>
@@ -74,7 +78,6 @@ export default function Home() {
          </div>
       </section>
 
-      {/* --- FOOTER --- */}
       <footer className="py-6 text-center text-slate-500 text-sm bg-white/40 backdrop-blur-sm">
         &copy; 2025 Maximiliano Garcia. Powered by Next.js & Frutiger Aero.
       </footer>
