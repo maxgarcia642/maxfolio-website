@@ -5,8 +5,13 @@ import "./globals.css";
 */
 
 export const metadata = {
-  title: "Maximiliano Garcia | Portfolio",
-  description: "A Frutiger Aero-inspired creative portfolio",
+  title: "Maxfolio - Create Your Chaotic Portfolio",
+  description: "The internet's most chaotic portfolio generator. Create ridiculous profiles with silly job titles, random themes, and zero authentication required!",
+  openGraph: {
+    title: "Maxfolio - Create Your Chaotic Portfolio",
+    description: "Create ridiculous profiles with silly job titles and random themes!",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {

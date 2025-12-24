@@ -1,85 +1,113 @@
-'use client'; // Whiteline: Added this to ensure interactive components load correctly
+'use client';
 
 import Navbar from '../components/Navbar';
-import Utilities from '../components/Utilities';
-import { ArrowDown, Terminal, Gamepad2 } from 'lucide-react';
-
-/* WHITELINE: This is the main assembly point for your portfolio.
-   It brings together the Hero section, your Code repos, and the 
-   Utility dashboard into one smooth scrolling experience.
-*/
+import { Sparkles, Users, Shuffle } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <main className="min-h-screen pb-20">
       <Navbar />
 
       {/* --- HERO SECTION --- */}
       <section id="intro" className="min-h-screen flex flex-col items-center justify-center relative pt-20 px-4 text-center">
-        {/* Background Decorative Orbs (The "Frutiger" feel) */}
+        {/* Background Decorative Orbs */}
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-aero-sky/30 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-aero-grass/20 rounded-full blur-3xl animate-pulse delay-1000" />
 
-        <div className="aero-card p-10 max-w-3xl z-10 bg-white/40 backdrop-blur-xl">
+        <div className="aero-card p-10 max-w-4xl z-10 bg-white/40 backdrop-blur-xl">
            <h1 className="text-5xl md:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-aero-ocean to-aero-sky mb-4 drop-shadow-sm">
-             Maximiliano Garcia
+             Welcome to Maxfolio
            </h1>
-           <p className="text-xl md:text-2xl text-slate-700 font-light mb-8">
-             Computer Science • Creative Developer
+           <p className="text-xl md:text-2xl text-slate-700 font-light mb-4">
+             The Internet's Most Chaotic Portfolio Generator
            </p>
-           <div className="flex gap-4 justify-center">
-             <a href="/assets/resume.pdf" className="px-8 py-3 bg-gradient-to-b from-aero-sky to-aero-ocean text-white rounded-full font-bold shadow-lg hover:scale-105 transition-transform">
-               Download Resume
-             </a>
-             <a href="#connect" className="px-8 py-3 bg-white text-aero-ocean border border-aero-ocean rounded-full font-bold shadow-lg hover:bg-blue-50 transition-colors">
-               Connect
-             </a>
+           <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+             Create ridiculous profiles with silly job titles, random themes, and zero authentication required. 
+             It's permanent chaos, and we love it! 🎭
+           </p>
+           <div className="flex gap-4 justify-center flex-wrap">
+             <button 
+               onClick={() => router.push('/create')}
+               className="px-8 py-3 bg-gradient-to-b from-aero-sky to-aero-ocean text-white rounded-full font-bold shadow-lg hover:scale-105 transition-transform flex items-center gap-2"
+             >
+               <Sparkles size={20} /> Create Your Maxfolio
+             </button>
+             <button 
+               onClick={() => router.push('/explore')}
+               className="px-8 py-3 bg-white text-aero-ocean border-2 border-aero-ocean rounded-full font-bold shadow-lg hover:bg-blue-50 transition-colors flex items-center gap-2"
+             >
+               <Users size={20} /> Explore Random Maxfolios
+             </button>
            </div>
         </div>
-        
-        <ArrowDown className="absolute bottom-10 animate-bounce text-aero-ocean opacity-50" size={32} />
       </section>
 
-      {/* --- PROGRAMMING SECTION --- */}
-      <section id="programming" className="py-20 px-4 max-w-6xl mx-auto">
+      {/* --- PREVIEW SECTION --- */}
+      <section id="preview" className="py-20 px-4 max-w-6xl mx-auto">
         <div className="aero-card p-8 bg-gradient-to-br from-blue-50 to-white">
-          <h2 className="text-3xl font-extrabold text-aero-ocean mb-6 flex items-center gap-3">
-            <Terminal /> Programming Repositories
+          <h2 className="text-3xl font-extrabold text-aero-ocean mb-6 flex items-center gap-3 justify-center">
+            <Shuffle /> How It Works
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-gray-900 rounded-xl p-4 text-white shadow-xl hover:scale-105 transition-transform">
-              <h3 className="font-bold text-green-400 mb-2">Python Projects</h3>
-              <p className="text-sm text-gray-400 mb-4">High School CS Work & Scripts</p>
-              <a href="https://github.com/maxgarcia642" target="_blank" className="text-xs bg-gray-700 px-2 py-1 rounded">View on GitHub</a>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-transform">
+              <div className="text-4xl mb-4">🎲</div>
+              <h3 className="font-bold text-aero-ocean mb-2">1. Generate Username</h3>
+              <p className="text-sm text-gray-600">Get a random silly username like "cosmic-banana-47" or create your own!</p>
             </div>
-            <div className="bg-gray-900 rounded-xl p-4 text-white shadow-xl hover:scale-105 transition-transform">
-              <h3 className="font-bold text-blue-400 mb-2">Java AP CS</h3>
-              <p className="text-sm text-gray-400 mb-4">Object Oriented Programming</p>
-              <a href="https://github.com/maxgarcia642" target="_blank" className="text-xs bg-gray-700 px-2 py-1 rounded">View on GitHub</a>
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-transform">
+              <div className="text-4xl mb-4">✨</div>
+              <h3 className="font-bold text-aero-ocean mb-2">2. Add Your Chaos</h3>
+              <p className="text-sm text-gray-600">Pick a ridiculous job title, write your bio, add skills, upload a photo!</p>
+            </div>
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:scale-105 transition-transform">
+              <div className="text-4xl mb-4">🎨</div>
+              <h3 className="font-bold text-aero-ocean mb-2">3. Get Random Theme</h3>
+              <p className="text-sm text-gray-600">Receive a random color palette and share your unique Maxfolio URL!</p>
             </div>
           </div>
         </div>
       </section>
 
-      <Utilities />
-
-      {/* --- GAME SECTION --- */}
-      <section id="game" className="py-20 px-4 text-center">
-         <div className="aero-card max-w-2xl mx-auto p-10 bg-white">
-            <h2 className="text-3xl font-bold text-aero-grass mb-4 flex justify-center gap-2 items-center">
-              <Gamepad2 /> Pixel Studio
+      {/* --- FEATURES SECTION --- */}
+      <section className="py-20 px-4 text-center max-w-4xl mx-auto">
+         <div className="aero-card p-10 bg-white/40">
+            <h2 className="text-3xl font-bold text-aero-grass mb-6">
+              Features
             </h2>
-            <p className="text-slate-600 mb-8">
-              A dedicated space for pixel art and retro gaming.
-            </p>
-            <div className="w-full h-64 bg-gray-100 rounded-xl border-4 border-dashed border-gray-300 flex items-center justify-center">
-               <span className="text-slate-400 font-mono">Game Canvas Initializing</span>
-            </div>
+            <ul className="text-left space-y-3 text-slate-700 max-w-2xl mx-auto">
+              <li className="flex items-start gap-2">
+                <span className="text-aero-ocean font-bold">✓</span>
+                <span>No login required - instant chaos!</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-aero-ocean font-bold">✓</span>
+                <span>Random username generator with silly combinations</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-aero-ocean font-bold">✓</span>
+                <span>20+ ridiculous job title suggestions</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-aero-ocean font-bold">✓</span>
+                <span>Random color themes for unique profiles</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-aero-ocean font-bold">✓</span>
+                <span>It's permanent - no editing! (That's the fun part)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-aero-ocean font-bold">✓</span>
+                <span>Explore random profiles from around the chaos</span>
+              </li>
+            </ul>
          </div>
       </section>
 
-      <footer className="py-6 text-center text-slate-500 text-sm bg-white/40 backdrop-blur-sm">
-        &copy; 2025 Maximiliano Garcia. Powered by Next.js & Frutiger Aero.
+      <footer className="py-6 text-center text-slate-500 text-sm bg-white/40 backdrop-blur-sm mt-20">
+        &copy; 2025 Maxfolio. Embrace the chaos! Powered by Next.js & Supabase.
       </footer>
     </main>
   );

@@ -4,11 +4,9 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 const navItems = [
-  { id: 'intro', label: 'Home', desc: 'Back to start' },
-  { id: 'programming', label: 'Code', desc: 'Github Repos' },
-  { id: 'utilities', label: 'Utils', desc: 'Finance & Tools' },
-  { id: 'game', label: 'Game', desc: 'Pixel Studio' },
-  { id: 'connect', label: 'Connect', desc: 'Social Links' },
+  { id: 'home', label: 'Home', desc: 'Back to start', href: '/' },
+  { id: 'create', label: 'Create', desc: 'Make Your Maxfolio', href: '/create' },
+  { id: 'explore', label: 'Explore', desc: 'Random Profiles', href: '/explore' },
 ];
 
 export default function Navbar() {
@@ -21,10 +19,18 @@ export default function Navbar() {
       className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4"
     >
       <div className="aero-card !rounded-full px-4 py-2 flex gap-1 sm:gap-4 shadow-2xl bg-white/60">
+        {/* Maxfolio Logo/Brand */}
+        <a 
+          href="/"
+          className="px-4 py-2 rounded-full text-sm font-extrabold text-aero-ocean mr-2 flex items-center"
+        >
+          🎭 Maxfolio
+        </a>
+        
         {navItems.map((item) => (
           <div key={item.id} className="relative group">
             <a 
-              href={`#${item.id}`}
+              href={item.href}
               className="px-4 py-2 rounded-full text-sm font-bold text-slate-700 hover:text-aero-ocean transition-all duration-200 relative z-10 block"
               onMouseEnter={() => setHovered(item.id)}
               onMouseLeave={() => setHovered(null)}
