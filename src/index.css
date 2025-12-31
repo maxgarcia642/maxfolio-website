@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'MS Sans Serif';
+  src: local('MS Sans Serif'), local('Microsoft Sans Serif'), local('Arial');
+}
+
+body {
+  margin: 0;
+  background-color: #008080; /* Classic Win95 Teal */
+  color: black;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.win95-button {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 4px 12px;
+  cursor: pointer;
+  box-shadow: inset 1px 1px #dfdfdf;
+  font-weight: bold;
+}
+
+.win95-button:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: none;
+  padding: 5px 11px 3px 13px;
+}
+
+.win95-window {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 2px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.win95-title-bar {
+  background: linear-gradient(90deg, #3a91e5, #004ea1); /* Vista-ish Blue Gradient */
+  color: white;
+  padding: 4px 8px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+@keyframes wii-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.wii-float {
+    animation: wii-bounce 3s ease-in-out infinite;
+}
+
+.vista-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.win95-inset {
+  border: 2px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  background: white;
+  padding: 4px;
+}
+
+.market-graph {
+    background: #000;
+    border: 2px solid #333;
+}
